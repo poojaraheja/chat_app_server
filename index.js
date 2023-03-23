@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
-const io = require("socket.io")(process.env.PORT);
+
 var cors = require("cors");
 app.use(cors());
+const io = require("socket.io")(process.env.PORT, { cors: { origin: "*" } });
 const users = {};
 
 io.on("connection", (socket) => {
