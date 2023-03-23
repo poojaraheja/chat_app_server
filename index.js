@@ -1,5 +1,6 @@
 const io = require("socket.io")(process.env.PORT);
-
+var cors = require("cors");
+app.use(cors());
 const users = {};
 
 io.on("connection", (socket) => {
